@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
+import { Theme, useTheme } from "~/contexts/Theme";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,6 +9,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex flex-col items-center gap-16">
@@ -15,6 +18,13 @@ export default function Index() {
           <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
             Welcome to <span className="sr-only">Remix</span>
           </h1>
+          <button
+            onClick={() =>
+              setTheme(theme === Theme.dark ? Theme.light : Theme.dark)
+            }
+          >
+            test
+          </button>
           <div className="h-[144px] w-[434px]">
             <img
               src="/logo-light.png"
