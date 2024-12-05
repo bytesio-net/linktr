@@ -1,22 +1,15 @@
+import { MetaFunction } from "@remix-run/cloudflare";
 import LinkTree from "~/components/LinkTree";
+import { config } from "~/config";
 
-const linkTree = {
-  icon: "some-icon-class", // This can be a class name for styling
-  routes: {
-    facebook: {
-      route: "https://facebook.com/yourprofile",
-      label: "Facebook",
-    },
-    instagram: {
-      route: "https://instagram.com/yourprofile",
-      label: "Instagram",
-    },
-    // You can add more routes as needed
-  },
+export const meta: MetaFunction = () => {
+  return Object.entries(config.meta).map(([key, value]) => ({
+    [key]: value,
+  }));
 };
 
 const Linktr = () => {
-  return <LinkTree config={linkTree} />;
+  return <LinkTree config={config} />;
 };
 
 export default Linktr;

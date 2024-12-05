@@ -1,18 +1,30 @@
 import { HTMLAttributes } from "react";
 
 interface ImageProps extends HTMLAttributes<HTMLImageElement> {
-  src: string;
+  src: {
+    light: string;
+    dark?: string;
+  };
   alt: string;
 }
 
-export const Image = ({ ...props }: ImageProps) => {
+export const BrandLogo = ({ ...props }: ImageProps) => {
   return (
-    <div className="border border-gray-200 rounded-lg">
-      <img
-        src={props.src}
-        alt={props.alt ?? ""}
-        className="w-full h-full object-contain"
-      />
+    <div className="w-full h-full border p-2 dark:border-secondary rounded">
+      {props.src.light && (
+        <img
+          src={props.src.light}
+          alt={props.alt}
+          className="object-cover rounded dark:hidden"
+        />
+      )}
+      {props.src.dark && (
+        <img
+          src={props.src.dark}
+          alt={props.alt}
+          className="object-cover rounded hidden dark:block"
+        />
+      )}
     </div>
   );
 };

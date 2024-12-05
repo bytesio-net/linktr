@@ -1,14 +1,17 @@
-import { ButtonHTMLAttributes } from "react";
-
+import { RouteLinkProps } from ".";
 import { FacebookIcon } from "../Icons/FacebookIcon";
 import { RouteButton } from "../RouteButton";
 
-type FacebookRouteLinkProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type FacebookRouteLinkProps = RouteLinkProps;
 
-export const FacebookLink = ({ ...props }: FacebookRouteLinkProps) => {
+export const FacebookLink = ({ label, ...props }: FacebookRouteLinkProps) => {
   return (
-    <RouteButton icon={FacebookIcon} className="bg-blue-500" {...props}>
-      Facebook
+    <RouteButton
+      icon={FacebookIcon}
+      className="bg-[#1877F2] text-white"
+      {...props}
+    >
+      {label ?? "Facebook"}
     </RouteButton>
   );
 };

@@ -1,14 +1,12 @@
-import { ButtonHTMLAttributes } from "react";
-
-import { InstagramIcon } from "../Icons/InstagramIcon";
+import { RouteLinkProps } from ".";
 import { RouteButton } from "../RouteButton";
 
-type DefaultRouteLinkProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type DefaultRouteLinkProps = RouteLinkProps;
 
-export const DefaultLink = ({ ...props }: DefaultRouteLinkProps) => {
+export const DefaultLink = ({ label, ...props }: DefaultRouteLinkProps) => {
   return (
-    <RouteButton icon={InstagramIcon} className="bg-pink-500" {...props}>
-      Default
+    <RouteButton className="bg-background " {...props}>
+      {label ?? "click"}
     </RouteButton>
   );
 };

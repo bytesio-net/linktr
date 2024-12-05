@@ -4,7 +4,11 @@ type RouteLink = {
 };
 
 export type LinkTree = {
-  icon: string;
+  icon: {
+    light: string;
+    dark?: string;
+  };
+  title: string;
 
   routes: {
     X?: RouteLink;
