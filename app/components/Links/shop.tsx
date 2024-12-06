@@ -8,7 +8,7 @@ export const ShopLink = ({ label, ...props }: ShopRouteLinkProps) => {
   return (
     <RouteButton
       icon={ShopIcon}
-      className="border border-primary dark:hover:bg-primary/10"
+      className="border border-primary bg-primary text-white dark:hover:bg-primary/10 dark:bg-secondary/10 "
       {...props}
     >
       {label ?? "Shop"}

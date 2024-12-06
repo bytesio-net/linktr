@@ -8,7 +8,7 @@ export const InstagramLink = ({ label, ...props }: InstagramRouteLinkProps) => {
   return (
     <RouteButton
       icon={InstagramIcon}
-      className="bg-[#C13584] hover:bg-[#E1306C] "
+      className="bg-[#C13584] hover:bg-[#E1306C] text-white"
       {...props}
     >
       {label ?? "Instagram"}

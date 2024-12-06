@@ -29,10 +29,17 @@ export const Links = ({ routes = {} }: LinksProps) => {
       {routeKeys.map((key) => {
         const RouteLink =
           routeLinkMap[key as keyof typeof routeLinkMap] ?? DefaultLink;
-        return (
-          <Link key={key} to={routes[key]?.route ?? ""}>
+        return routes[key]?.route ? (
+          <Link
+            key={key}
+            to={routes[key]?.route ?? ""}
+            target="_blank"
+            rel="noreferrer"
+          >
             <RouteLink {...routes[key as keyof typeof routes]} />
           </Link>
+        ) : (
+          <RouteLink {...routes[key as keyof typeof routes]} />
         );
       })}
     </div>
