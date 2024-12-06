@@ -9,7 +9,7 @@ export type LinkTree = {
     dark?: string;
   };
   title: string;
-
+  announcements?: string;
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;

@@ -6,6 +6,9 @@ export const config = {
     dark: "/static/logo-dark.png",
   },
   title: "Select | ConceptLab",
+  announcements:
+    "現時網站正進行beta測試如需落單, 請到Instagram/Whatsapp落單,不便之處敬請見諒🙇🏻‍♀️ \nThe website is currently undergoing beta testing. If you need to place an order, please do so via Instagram/WhatsApp. We apologize for any inconvenience caused🙇🏻‍♀️",
+
   meta: {
     title: "Linktr - Select | ConceptLab",
     description:
@@ -21,7 +24,6 @@ export const config = {
     "og:locale": "en_HK",
     "og:site_name": "Select | ConceptLab",
     "og:type": "website",
-
     "twitter:card": "summary_large_image",
     "twitter:title": "Select | ConceptLab",
     "twitter:description":
@@ -31,17 +33,17 @@ export const config = {
     "twitter:url": "https://select.conceptlab.hk/linktr",
   },
   routes: {
-    facebook: {
-      route: "https://facebook.com/select.conceptlab.hk",
-      label: "Facebook",
+    shop: {
+      route: "https://select.conceptlab.hk",
+      label: "Shop",
     },
     instagram: {
       route: "https://instagram.com/select.conceptlab.hk",
       label: "Instagram",
     },
-    shop: {
-      route: "https://select.conceptlab.hk",
-      label: "Shop",
+    facebook: {
+      route: "https://facebook.com/select.conceptlab.hk",
+      label: "Facebook",
     },
   },
 } as Config;
