@@ -11,6 +11,11 @@ import { PreventFlashTheme, ThemeProvider } from "./contexts/Theme";
 import "./tailwind.css";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "icon",
+    href: "/favicon.ico",
+    type: "image/ico",
+  },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
