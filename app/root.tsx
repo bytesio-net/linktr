@@ -34,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="max-w-lg mx-auto h-screen px-4">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>
