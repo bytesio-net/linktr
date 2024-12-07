@@ -8,7 +8,7 @@ export const FacebookLink = ({ label, ...props }: FacebookRouteLinkProps) => {
   return (
     <RouteButton
       icon={FacebookIcon}
-      className="bg-[#1877F2] text-white"
+      className="bg-[#1877F2] hover:bg-[#1568d4] text-white"
       {...props}
     >
       {label ?? "Facebook"}
