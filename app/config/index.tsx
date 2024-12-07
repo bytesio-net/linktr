@@ -2,8 +2,8 @@ import { Config } from "~/types/Config";
 
 export const config = {
   icon: {
-    light: "/static/logo-light.png",
-    dark: "/static/logo-dark.png",
+    light: "/app/linktr/static/logo-light.png",
+    dark: "/app/linktr/static/logo-dark.png",
   },
   title: "Select | ConceptLab",
   announcements:
