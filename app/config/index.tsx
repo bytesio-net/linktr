@@ -6,6 +6,7 @@ export const config = {
     dark: "/app/linktr/static/logo-dark.png",
   },
   title: "Linktr - Select | ConceptLab",
+  username: "@select.conceptlab.hk",
   announcements:
     "現時Shop網站正進行beta測試如需落單, 請到Instagram/Whatsapp落單,不便之處敬請見諒🙇🏻‍♀️ \nThe Shop Page is currently undergoing beta testing. If you need to place an order, please do so via Instagram/WhatsApp. We apologize for any inconvenience caused🙇🏻‍♀️",
 
@@ -44,7 +45,12 @@ export const config = {
     },
     facebook: {
       route: "https://facebook.com/select.conceptlab.hk",
-      label: "Facebook",
+      label: "facebook",
+    },
+    whatsapp: {
+      route: "https://wa.me/85212345678",
+      label: "Whatsapp",
+      disabled: true,
     },
     tnc: {
       route: "https://select.conceptlab.hk/tnc",

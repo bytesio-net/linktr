@@ -10,6 +10,7 @@ export type LinkTree = {
     dark?: string;
   };
   title: string;
+  username?: string;
   announcements?: string;
   routes: {
     X?: RouteLink;
