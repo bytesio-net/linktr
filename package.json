@@ -1,9 +1,11 @@
 {
-  "name": "linktr",
+  "name": "conceptlab-linktr",
+  "version": "0.0.1",
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "bump-version": "standard-version --skip.commit=true --skip.tag=true",
     "deploy": "wrangler pages deploy ./build/client",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
@@ -18,8 +20,8 @@
     "@remix-run/react": "^2.15.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "conceptlab-linktr": "file:",
     "isbot": "^4.1.0",
-    "linktr": "file:",
     "lucide-react": "^0.464.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
