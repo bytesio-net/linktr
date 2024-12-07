@@ -19,6 +19,7 @@ export const RouteButton = ({
         "flex justify-center items-center gap-2",
         "transition-colors duration-300",
         "w-full px-4 py-3 rounded-sm",
+        "text-sm",
         // "hover:scale-105",
         className,
         disabled && "opacity-20 cursor-not-allowed"
