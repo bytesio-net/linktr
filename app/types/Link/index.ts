@@ -1,6 +1,7 @@
 type RouteLink = {
   route: string;
   label: string;
+  disabled?: boolean;
 };
 
 export type LinkTree = {

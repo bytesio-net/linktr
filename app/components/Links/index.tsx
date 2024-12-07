@@ -31,7 +31,7 @@ export const Links = ({ routes = {} }: LinksProps) => {
       {routeKeys.map((key) => {
         const RouteLink =
           routeLinkMap[key as keyof typeof routeLinkMap] ?? DefaultLink;
-        return routes[key]?.route ? (
+        return routes[key]?.route && !routes[key]?.disabled ? (
           <Link
             key={key}
             to={routes[key]?.route ?? ""}

@@ -1,3 +1,5 @@
+import { cn } from "~/lib/utils";
+
 import { RouteLinkProps } from ".";
 import { InstagramIcon } from "../Icons/InstagramIcon";
 import { RouteButton } from "../RouteButton";
@@ -8,7 +10,10 @@ export const InstagramLink = ({ label, ...props }: InstagramRouteLinkProps) => {
   return (
     <RouteButton
       icon={InstagramIcon}
-      className="bg-[#C13584] hover:bg-[#E1306C] text-white"
+      className={cn(
+        "bg-[#C13584] text-white",
+        !props.disabled && "hover:bg-[#E1306C]"
+      )}
       {...props}
     >
       {label ?? "Instagram"}

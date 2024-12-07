@@ -3,12 +3,14 @@ import { cn } from "~/lib/utils";
 
 interface RouteButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ElementType;
+  disabled?: boolean;
 }
 
 export const RouteButton = ({
   icon: Icon,
   className,
   children,
+  disabled = false,
   ...props
 }: RouteButtonProps) => {
   return (
@@ -18,7 +20,8 @@ export const RouteButton = ({
         "transition-colors duration-300",
         "w-full px-4 py-3 rounded-sm",
         // "hover:scale-105",
-        className
+        className,
+        disabled && "opacity-20 cursor-not-allowed"
       )}
       {...props}
     >

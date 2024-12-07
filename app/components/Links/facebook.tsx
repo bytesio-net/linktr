@@ -1,3 +1,5 @@
+import { cn } from "~/lib/utils";
+
 import { RouteLinkProps } from ".";
 import { FacebookIcon } from "../Icons/FacebookIcon";
 import { RouteButton } from "../RouteButton";
@@ -8,7 +10,10 @@ export const FacebookLink = ({ label, ...props }: FacebookRouteLinkProps) => {
   return (
     <RouteButton
       icon={FacebookIcon}
-      className="bg-[#1877F2] hover:bg-[#1568d4] text-white"
+      className={cn(
+        "bg-[#1877F2] text-white",
+        !props.disabled && "hover:bg-[#1568d4]"
+      )}
       {...props}
     >
       {label ?? "Facebook"}
