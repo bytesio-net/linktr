@@ -12,10 +12,10 @@ export const config = {
   meta: {
     description:
       "Select | ConceptLab - We offer a curated selection of Korean and Japanese-inspired styles in Hong Kong, redefining modern fashion with simplicity, elegance, and creativity. This concept-driven project connects global style with local artistry.",
-    "og:title": "Select | ConceptLab",
+    "og:title": "Linktr - Select | ConceptLab",
     "og:description":
       "We offer a curated selection of Korean and Japanese-inspired styles in Hong Kong, redefining modern fashion with simplicity, elegance, and creativity. This concept-driven project connects global style with local artistry.",
-    "og:image": "/static/logo-light.png",
+    "og:image": "https://select.conceptlab.hk/app/linktr/static/logo-light.png",
     "og:image:alt": "Select | ConceptLab",
     "og:image:width": "1280",
     "og:image:height": "1280",
@@ -24,7 +24,7 @@ export const config = {
     "og:site_name": "Select | ConceptLab",
     "og:type": "website",
     "twitter:card": "summary_large_image",
-    "twitter:title": "Select | ConceptLab",
+    "twitter:title": "Linktr - Select | ConceptLab",
     "twitter:description":
       "We offer a curated selection of Korean and Japanese-inspired styles in Hong Kong, redefining modern fashion with simplicity, elegance, and creativity. This concept-driven project connects global style with local artistry.",
     "twitter:image": "/static/logo-light.png",
