@@ -13,8 +13,9 @@ import "./tailwind.css";
 export const links: LinksFunction = () => [
   {
     rel: "icon",
-    href: "/favicon.ico",
-    type: "image/ico",
+    href: "/app/linktr/static/favicon.png",
+    type: "image/png",
+    sizes: "64x64",
   },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
