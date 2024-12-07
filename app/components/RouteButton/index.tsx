@@ -17,7 +17,7 @@ export const RouteButton = ({
         "flex justify-center items-center gap-2",
         "transition-colors duration-300",
         "w-full px-4 py-4 rounded-sm",
-        "hover:scale-105",
+        // "hover:scale-105",
         className
       )}
       {...props}
