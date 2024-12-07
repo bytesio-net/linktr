@@ -1,6 +1,7 @@
 type RouteLink = {
   route: string;
   label: string;
+  disabled?: boolean;
 };
 
 export type LinkTree = {
@@ -9,6 +10,7 @@ export type LinkTree = {
     dark?: string;
   };
   title: string;
+  username?: string;
   announcements?: string;
   routes: {
     X?: RouteLink;

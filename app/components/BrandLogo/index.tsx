@@ -10,7 +10,7 @@ interface ImageProps extends HTMLAttributes<HTMLImageElement> {
 
 export const BrandLogo = ({ ...props }: ImageProps) => {
   return (
-    <div className="w-full h-full border p-2 dark:border-secondary rounded">
+    <div className="w-36 h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 border p-2 dark:border-secondary rounded">
       {props.src.light && (
         <img
           src={props.src.light}

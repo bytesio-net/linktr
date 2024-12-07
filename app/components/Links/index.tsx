@@ -6,6 +6,7 @@ import { DefaultLink } from "./default";
 import { FacebookLink } from "./facebook";
 import { InstagramLink } from "./instagram";
 import { ShopLink } from "./shop";
+import { WhatsappLink } from "./whatsapp";
 
 export type RouteLinkProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
@@ -19,6 +20,7 @@ const routeLinkMap = {
   facebook: FacebookLink,
   instagram: InstagramLink,
   shop: ShopLink,
+  whatsapp: WhatsappLink,
 };
 
 export const Links = ({ routes = {} }: LinksProps) => {
@@ -29,7 +31,7 @@ export const Links = ({ routes = {} }: LinksProps) => {
       {routeKeys.map((key) => {
         const RouteLink =
           routeLinkMap[key as keyof typeof routeLinkMap] ?? DefaultLink;
-        return routes[key]?.route ? (
+        return routes[key]?.route && !routes[key]?.disabled ? (
           <Link
             key={key}
             to={routes[key]?.route ?? ""}

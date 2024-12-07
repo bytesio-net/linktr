@@ -1,5 +1,8 @@
 import { MetaFunction } from "@remix-run/cloudflare";
+import React from "react";
+import { TopFixedRight } from "~/components/Fixed/TopRight";
 import LinkTree from "~/components/LinkTree";
+import { ToggleTheme } from "~/components/Toggle/Theme";
 import { config } from "~/config";
 
 export const meta: MetaFunction = () => {
@@ -15,7 +18,14 @@ export const meta: MetaFunction = () => {
 };
 
 const Linktr = () => {
-  return <LinkTree config={config} />;
+  return (
+    <React.Fragment>
+      <LinkTree config={config} />
+      <TopFixedRight>
+        <ToggleTheme />
+      </TopFixedRight>
+    </React.Fragment>
+  );
 };
 
 export default Linktr;
