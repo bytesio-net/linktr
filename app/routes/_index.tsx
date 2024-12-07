@@ -1,4 +1,6 @@
 import { MetaFunction } from "@remix-run/cloudflare";
+import { TopFixedRight } from "~/components/Fixed/TopRight";
+import { ToggleTheme } from "~/components/Toggle/Theme";
 import { config } from "~/config";
 
 import Linktr from "./linktr";
@@ -16,7 +18,14 @@ export const meta: MetaFunction = () => {
 };
 
 const Index = () => {
-  return <Linktr />;
+  return (
+    <>
+      <Linktr />
+      <TopFixedRight>
+        <ToggleTheme />
+      </TopFixedRight>
+    </>
+  );
 };
 
 export default Index;
