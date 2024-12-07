@@ -4,10 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
+    "build": "NODE_ENV=production remix vite:build",
     "bump-version": "standard-version --skip.commit=true --skip.tag=true",
     "deploy": "wrangler pages deploy ./build/client",
-    "dev": "remix vite:dev",
+    "dev": "NODE_ENV=development remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
     "typecheck": "tsc",
