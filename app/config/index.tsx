@@ -7,7 +7,7 @@ export const config = {
   },
   title: "Select | ConceptLab",
   announcements:
-    "現時網站正進行beta測試如需落單, 請到Instagram/Whatsapp落單,不便之處敬請見諒🙇🏻‍♀️ \nThe website is currently undergoing beta testing. If you need to place an order, please do so via Instagram/WhatsApp. We apologize for any inconvenience caused🙇🏻‍♀️",
+    "現時Shop網站正進行beta測試如需落單, 請到Instagram/Whatsapp落單,不便之處敬請見諒🙇🏻‍♀️ \nThe Shop Page is currently undergoing beta testing. If you need to place an order, please do so via Instagram/WhatsApp. We apologize for any inconvenience caused🙇🏻‍♀️",
 
   meta: {
     title: "Linktr - Select | ConceptLab",
@@ -44,6 +44,10 @@ export const config = {
     facebook: {
       route: "https://facebook.com/select.conceptlab.hk",
       label: "Facebook",
+    },
+    tnc: {
+      route: "https://select.conceptlab.hk/tnc",
+      label: "Terms & Conditions",
     },
   },
 } as Config;
