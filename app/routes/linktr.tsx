@@ -3,9 +3,15 @@ import LinkTree from "~/components/LinkTree";
 import { config } from "~/config";
 
 export const meta: MetaFunction = () => {
-  return Object.entries(config.meta).map(([key, value]) => ({
-    [key]: value,
-  }));
+  return [
+    {
+      title: config.title,
+    },
+    ...Object.entries(config.meta).map(([key, value]) => ({
+      property: key,
+      content: value,
+    })),
+  ];
 };
 
 const Linktr = () => {

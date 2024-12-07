@@ -4,9 +4,15 @@ import { config } from "~/config";
 import Linktr from "./linktr";
 
 export const meta: MetaFunction = () => {
-  return Object.entries(config.meta).map(([key, value]) => ({
-    [key]: value,
-  }));
+  return [
+    {
+      title: config.title,
+    },
+    ...Object.entries(config.meta).map(([key, value]) => ({
+      property: key,
+      content: value,
+    })),
+  ];
 };
 
 const Index = () => {
