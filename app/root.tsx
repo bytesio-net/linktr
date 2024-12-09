@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,
@@ -8,8 +8,21 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import { config } from "./config";
 import { PreventFlashTheme, ThemeProvider } from "./contexts/Theme";
 import "./tailwind.css";
+
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title: config.title,
+    },
+    ...Object.entries(config.meta).map(([key, value]) => ({
+      property: key,
+      content: value,
+    })),
+  ];
+};
 
 export const links: LinksFunction = () => [
   {
