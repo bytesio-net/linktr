@@ -1,29 +1,52 @@
 # Linktr
 
-
-You can use this repository to self-host your link tree. You just need to modify following files
-```
-app/config/index.tsx        # Linktree config
-public/app/linktr/static/   # for images like icon
-```
-
-## Tech Stack
 - Remix v2
 - TailwindCSS
-- Cloudfalre Page
+- Cloudflare Pages
 
-## Application Config
-Edit the `app/config/index.tsx` config file
-### Schema
+This repository allows you to self-host your own link tree. To get started, you only need to modify a few files:
+
+```
+app/config/index.tsx        # Linktree configuration
+public/app/linktr/static/   # Folder for images like icons
+```
+
+## Table of Contents
+1. [Application](#application)
+   - [Routes](#routes)
+   - [Configuration](#configuration)
+2. [Deployment](#deployment)
+   - [Routing to Your Website](#routing-to-your-website)
+3. [Development](#development)
+   - [Running the Development Server](#running-the-development-server)
+   - [Running Wrangler](#running-wrangler)
+   - [Building the Application](#building-the-application)
+
+## Application
+
+### Routes
+The following routes render the same Linktr component:
+```
+/
+/linktr
+```
+
+Static files are located at `public/app/linktr/static/**`.  
+After the build process, they will be available in `build/client/app/linktr/static`.
+
+### Configuration
+You can edit the configuration in the `app/config/index.tsx` file.
+
+#### Schema
 ```ts
-# RouteLink
+// RouteLink
 {
   route: string;
   label: string;
   disabled?: boolean;
 }
 
-# Config
+// Config
 {
   icon: {
     light: string;
@@ -33,37 +56,51 @@ Edit the `app/config/index.tsx` config file
   username?: string;
   announcements?: string;
   meta: {
-    [key:string]: string
-  }
+    [key: string]: string;
+  };
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;
     instagram?: RouteLink;
     threads?: RouteLink;
     whatsapp?: RouteLink;
-    shop?: RouteLink;
-    [key: string]: RouteLink | undefined; # default color theme
+    bashop?: RouteLink;
+    [key: string]: RouteLink | undefined;
   };
 }
 ```
 
+---
+
 ## Deployment
-This Project used [Cloudflare Page](https://pages.cloudflare.com) as hosting. You just need to connect your forked repository then update the changes, it will be trigger the deployment.
+This project uses [Cloudflare Pages](https://pages.cloudflare.com) for hosting.  
+To deploy, simply fork the repository, make your changes, and pubash them to trigger deployment.
+
+### Routing to Your Website
+To rewrite paths for your website, use the following patterns:
+```
+/linktr*                     # For the main path (the * is needed for compatibility with some browsers like Instagram's in-app browser)
+/app/linktr/assets/*         # For JS assets
+/app/linktr/static/*         # For images and other static files
+```
+
+We will provide worker codes to let you can multi origin in further if using Cloudfalre Free.
+
 
 ## Development
-### Run development server
-```sh
+
+### Running the Development Server
+```bash
 npm run dev
 ```
 
-### Run Wrangler
-
-```sh
+### Running Wrangler
+```bash
 npm run build
 npm run start
 ```
 
-### Build
-```sh
+### Building the Application
+```bash
 npm run build
 ```
