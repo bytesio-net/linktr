@@ -1,5 +1,6 @@
 import { LinkTree as ILinkTree } from "~/types/Link";
 
+import { cn } from "../../lib/utils";
 import { Announcement } from "../Announcement";
 import { BrandLogo } from "../BrandLogo";
 import { Links } from "../Links";
@@ -13,9 +14,11 @@ const LinkTree = ({
 }: LinkTreeProps) => {
   return (
     <div
-      className="flex flex-col gap-4
-        min-h-screen 
-        justify-center items-center"
+      className={cn(
+        "flex flex-col gap-4",
+        "min-h-screen py-8",
+        "justify-center items-center"
+      )}
     >
       <BrandLogo src={icon} alt={title} />
       <div className="flex flex-col items-center">

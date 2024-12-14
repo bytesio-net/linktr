@@ -17,7 +17,7 @@ export const ToggleTheme = ({ children }: { children?: React.ReactNode }) => {
         setTheme(
           theme === Theme.system || theme === Theme.dark
             ? Theme.light
-            : Theme.system
+            : Theme.dark
         );
       }}
     >
