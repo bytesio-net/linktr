@@ -6,7 +6,9 @@ import { DefaultLink } from "./default";
 import { FacebookLink } from "./facebook";
 import { InstagramLink } from "./instagram";
 import { ShopLink } from "./shop";
+import { ThreadsLink } from "./threads";
 import { WhatsappLink } from "./whatsapp";
+import { XLink } from "./x";
 
 export type RouteLinkProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
@@ -17,6 +19,8 @@ type LinksProps = {
 };
 
 const routeLinkMap = {
+  threads: ThreadsLink,
+  x: XLink,
   facebook: FacebookLink,
   instagram: InstagramLink,
   shop: ShopLink,
