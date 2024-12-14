@@ -1,47 +1,69 @@
-# Welcome to Remix + Cloudflare!
+# Linktr
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+
+You can use this repository to self-host your link tree. You just need to modify following files
+```
+app/config/index.tsx        # Linktree config
+public/app/linktr/static/   # for images like icon
+```
+
+## Tech Stack
+- Remix v2
+- TailwindCSS
+- Cloudfalre Page
+
+## Application Config
+Edit the `app/config/index.tsx` config file
+### Schema
+```ts
+# RouteLink
+{
+  route: string;
+  label: string;
+  disabled?: boolean;
+}
+
+# Config
+{
+  icon: {
+    light: string;
+    dark?: string;
+  };
+  title: string;
+  username?: string;
+  announcements?: string;
+  meta: {
+    [key:string]: string
+  }
+  routes: {
+    X?: RouteLink;
+    facebook?: RouteLink;
+    instagram?: RouteLink;
+    threads?: RouteLink;
+    whatsapp?: RouteLink;
+    shop?: RouteLink;
+    [key: string]: RouteLink | undefined; # default color theme
+  };
+}
+```
+
+## Deployment
+This Project used [Cloudflare Page](https://pages.cloudflare.com) as hosting. You just need to connect your forked repository then update the changes, it will be trigger the deployment.
 
 ## Development
-
-Run the dev server:
-
+### Run development server
 ```sh
 npm run dev
 ```
 
-To run Wrangler:
+### Run Wrangler
 
 ```sh
 npm run build
 npm run start
 ```
 
-## Typegen
-
-Generate types for your Cloudflare bindings in `wrangler.toml`:
-
-```sh
-npm run typegen
-```
-
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
-
-## Deployment
-
-First, build your app for production:
-
+### Build
 ```sh
 npm run build
 ```
-
-Then, deploy your app to Cloudflare Pages:
-
-```sh
-npm run deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
