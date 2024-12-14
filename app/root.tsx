@@ -1,7 +1,6 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -57,7 +56,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-lg mx-auto h-screen px-4">{children}</div>
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
