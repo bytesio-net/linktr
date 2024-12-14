@@ -11,9 +11,8 @@ export const ThreadsLink = ({ label, ...props }: ThreadsLinkProps) => {
     <RouteButton
       icon={ThreadsIcon}
       className={cn(
-        "border border-primary bg-primary text-white ",
-        props.disabled &&
-          "hover:bg-primary/80 dark:hover:bg-primary/10 dark:bg-secondary/10",
+        "border border-primary bg-primary text-white dark:bg-secondary/10",
+        !props.disabled && "hover:bg-primary/80 dark:hover:bg-primary/10",
         "rounded-lg"
       )}
       {...props}

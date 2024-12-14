@@ -11,9 +11,8 @@ export const XLink = ({ label, ...props }: XLinkProps) => {
     <RouteButton
       icon={XIcon}
       className={cn(
-        "border border-primary bg-primary text-white ",
-        props.disabled &&
-          "hover:bg-primary/80  dark:hover:bg-primary/10 dark:bg-secondary/10"
+        "border border-primary bg-primary text-white dark:bg-secondary/10",
+        !props.disabled && "hover:bg-primary/80 dark:hover:bg-primary/10 "
       )}
       {...props}
     >
