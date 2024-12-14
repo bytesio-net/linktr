@@ -49,6 +49,16 @@ export const config = {
       route: "https://facebook.com/",
       label: "facebook",
     },
+    threads: {
+      route: "https://threads.net/",
+      label: "@username",
+      disabled: true,
+    },
+    x: {
+      route: "https://x.com/",
+      label: "X",
+      disabled: true,
+    },
     whatsapp: {
       route: "https://wa.me/",
       label: "Whatsapp",
