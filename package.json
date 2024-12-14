@@ -1,6 +1,6 @@
 {
-  "name": "conceptlab-linktr",
-  "version": "1.1.0",
+  "name": "linktr",
+  "version": "1.2.0",
   "sideEffects": false,
   "type": "module",
   "scripts": {
@@ -15,9 +15,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@remix-run/cloudflare": "^2.15.0",
-    "@remix-run/cloudflare-pages": "^2.15.0",
-    "@remix-run/react": "^2.15.0",
+    "@remix-run/cloudflare": "^2.15.1",
+    "@remix-run/cloudflare-pages": "^2.15.1",
+    "@remix-run/react": "^2.15.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "conceptlab-linktr": "file:",
@@ -32,7 +32,7 @@
     "@cloudflare/workers-types": "^4.20240512.0",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
-    "@remix-run/dev": "^2.15.0",
+    "@remix-run/dev": "^2.15.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",

@@ -9,67 +9,48 @@ import {
 export enum Theme {
   light = "light",
   dark = "dark",
-  system = "system",
 }
-
-export const themes = Object.values(Theme);
 
 const APP_THEME_KEY = "app-theme";
 const mediaQueryDarkMode = "(prefers-color-scheme: dark)";
 
 interface ThemeProviderProps {
   children: ReactNode;
-  defaultTheme?: Theme;
-  storageKey?: string;
 }
 
 interface IThemeContextState {
-  theme: Theme;
+  theme: Theme | null; // Initially null to prevent hydration mismatch
   setTheme: (theme: Theme) => void;
 }
 
-const initialState: IThemeContextState = {
-  theme: Theme.system,
-  setTheme: () => {
-    throw new Error("setTheme function must be initialized");
-  },
-};
+const ThemeContext = createContext<IThemeContextState | undefined>(undefined);
 
-const ThemeContext = createContext<IThemeContextState>(initialState);
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  const [theme, setTheme] = useState<Theme | null>(null);
 
-export const ThemeProvider = ({
-  children,
-  defaultTheme = Theme.system,
-  storageKey = APP_THEME_KEY,
-}: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return defaultTheme; // Ensure SSR safety
-    return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
-  });
-
+  // Initialize theme from localStorage or system preference
   useEffect(() => {
-    const root = document.documentElement;
+    const storedTheme = localStorage.getItem(APP_THEME_KEY) as Theme | null;
+    const systemTheme = window.matchMedia(mediaQueryDarkMode).matches
+      ? Theme.dark
+      : Theme.light;
+    const initialTheme = storedTheme || systemTheme;
 
-    root.classList.remove("light", "dark");
+    document.documentElement.classList.remove(Theme.light, Theme.dark);
+    document.documentElement.classList.add(initialTheme);
+    setTheme(initialTheme);
+  }, []);
 
-    if (theme === Theme.system) {
-      const systemTheme = window.matchMedia(mediaQueryDarkMode).matches
-        ? Theme.dark
-        : Theme.light;
-      root.classList.add(systemTheme);
-    } else {
-      root.classList.add(theme);
-    }
-  }, [theme]);
-
-  const setThemeAndStore = (newTheme: Theme) => {
-    localStorage.setItem(storageKey, newTheme);
+  const updateTheme = (newTheme: Theme) => {
+    document.documentElement.classList.remove(Theme.light, Theme.dark);
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem(APP_THEME_KEY, newTheme);
     setTheme(newTheme);
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: setThemeAndStore }}>
-      {children}
+    <ThemeContext.Provider value={{ theme, setTheme: updateTheme }}>
+      {theme !== null && children}
     </ThemeContext.Provider>
   );
 };
@@ -82,40 +63,18 @@ export const useTheme = (): IThemeContextState => {
   return context;
 };
 
-const clientThemeInitialThemeCode = String.raw`
+export const PreventFlashTheme = () => {
+  const clientThemeScript = `
     (function() {
       try {
         const storageKey = '${APP_THEME_KEY}';
-        const theme = localStorage.getItem(storageKey) || '${Theme.system}';
-        const systemTheme = window.matchMedia('${mediaQueryDarkMode}').matches ? '${Theme.dark}' : '${Theme.light}';
-        const appliedTheme = theme === '${Theme.system}' ? systemTheme : theme;
-        document.documentElement.classList.add(appliedTheme);
+        const theme = localStorage.getItem(storageKey) || 
+                      (window.matchMedia('${mediaQueryDarkMode}').matches ? '${Theme.dark}' : '${Theme.light}');
+        document.documentElement.classList.add(theme);
       } catch (e) {
         console.error('Error applying theme:', e);
       }
     })();
-`;
-
-type PreventFlashThemeProps = {
-  nonce?: string;
-};
-
-export const PreventFlashTheme = ({ nonce }: PreventFlashThemeProps) => {
-  const { theme } = useTheme();
-
-  const metaColorScheme = {
-    [Theme.light]: "light dark",
-    [Theme.dark]: "dark light",
-    [Theme.system]: "light dark",
-  }[theme];
-  return (
-    <>
-      <meta name="color-scheme" content={metaColorScheme} />
-      <script
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: clientThemeInitialThemeCode }}
-        suppressHydrationWarning
-      />
-    </>
-  );
+  `;
+  return <script dangerouslySetInnerHTML={{ __html: clientThemeScript }} />;
 };

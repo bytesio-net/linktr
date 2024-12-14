@@ -1,22 +1,22 @@
 import { cn } from "~/lib/utils";
 
 import { RouteLinkProps } from ".";
-import { ShopIcon } from "../Icons/ShopIcon";
+import { XIcon } from "../Icons/XIcon";
 import { RouteButton } from "../RouteButton";
 
-type ShopRouteLinkProps = RouteLinkProps;
+type XLinkProps = RouteLinkProps;
 
-export const ShopLink = ({ label, ...props }: ShopRouteLinkProps) => {
+export const XLink = ({ label, ...props }: XLinkProps) => {
   return (
     <RouteButton
-      icon={ShopIcon}
+      icon={XIcon}
       className={cn(
         "border border-primary bg-primary text-white dark:bg-secondary/10",
-        !props.disabled && "hover:bg-primary/80  dark:hover:bg-primary/10"
+        !props.disabled && "hover:bg-primary/80 dark:hover:bg-primary/10 "
       )}
       {...props}
     >
-      {label ?? "Shop"}
+      {label ?? "Threads"}
     </RouteButton>
   );
 };

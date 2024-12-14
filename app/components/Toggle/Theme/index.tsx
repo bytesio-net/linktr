@@ -1,28 +1,24 @@
 import { MoonIcon, SunIcon } from "lucide-react";
 import { Theme, useTheme } from "~/contexts/Theme";
 
-export const ToggleTheme = ({ children }: { children?: React.ReactNode }) => {
+export const ToggleTheme = () => {
   const { theme, setTheme } = useTheme();
 
-  const reverseThemeIcon = {
-    [Theme.system]: <SunIcon />,
-    [Theme.dark]: <SunIcon />,
-    [Theme.light]: <MoonIcon />,
-  }[theme];
+  if (theme === null) return null; // Avoid rendering until the theme is ready
+
+  const handleToggle = () => {
+    setTheme(theme === Theme.dark ? Theme.light : Theme.dark);
+  };
+
+  const CurrentIcon = theme === Theme.dark ? SunIcon : MoonIcon;
 
   return (
     <button
       className="p-3 bg-accent/50 rounded border"
-      onClick={() => {
-        setTheme(
-          theme === Theme.system || theme === Theme.dark
-            ? Theme.light
-            : Theme.system
-        );
-      }}
+      onClick={handleToggle}
+      aria-label="Toggle theme"
     >
-      {reverseThemeIcon}
-      {children}
+      <CurrentIcon />
     </button>
   );
 };
