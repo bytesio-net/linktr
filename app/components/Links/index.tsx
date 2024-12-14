@@ -41,7 +41,7 @@ export const Links = ({ routes = {} }: LinksProps) => {
             <RouteLink {...routes[key as keyof typeof routes]} />
           </Link>
         ) : (
-          <RouteLink {...routes[key as keyof typeof routes]} />
+          <RouteLink key={key} {...routes[key as keyof typeof routes]} />
         );
       })}
     </div>
