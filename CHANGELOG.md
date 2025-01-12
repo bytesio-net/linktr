@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/bytesio-net/linktr/compare/v1.2.0...v1.3.0) (2025-01-12)
+
+
+### Features
+
+* ga4 ([#4](https://github.com/bytesio-net/linktr/issues/4)) ([57c6200](https://github.com/bytesio-net/linktr/commit/57c62007e46b73a66d55082e50028d6a21b7e395))
+* share ([#5](https://github.com/bytesio-net/linktr/issues/5)) ([59b6de0](https://github.com/bytesio-net/linktr/commit/59b6de09d7f2eab8233c18c5d2ab423256ce5110))
+
 ## [1.2.0](https://github.com/bytesio-net/linktr/compare/v1.0.0...v1.2.0) (2024-12-14)
 
 
