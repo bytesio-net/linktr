@@ -10,9 +10,9 @@ export const config = {
     dark: "/app/linktr/static/background-dark.png",
   },
   title: "Linktr - BytesIO.net",
+  description: "Bytesio.net open source linktree",
   username: "@bytesio.net",
   announcements: "Hello World, \n\nThis is a test announcement",
-
   meta: {
     description: "Bytesio.net open source linktree",
     "og:title": "Linktr - Bytesio.net",
@@ -35,6 +35,9 @@ export const config = {
     "twitter:url": "https://demo-linktr.bytesio.net/",
     keywords:
       "Linktr, Bytesio.net, Bytesio, linktree, open source, open source linktree, open source linktree, self-host, linktrr own by yourself",
+  },
+  share: {
+    label: true,
   },
   routes: {
     shop: {
@@ -67,6 +70,11 @@ export const config = {
     repo: {
       route: "https://github.com/bytesio-net/linktr",
       label: "powered by bytesio.net (linktr)",
+    },
+  },
+  thirdParty: {
+    ga4: {
+      id: "G-G3ZW2G80MV",
     },
   },
 } as Config;

@@ -12,6 +12,11 @@ export type LinkTree = {
   title: string;
   username?: string;
   announcements?: string;
+  share?: {
+    label: boolean;
+    description?: string;
+    url?: string;
+  };
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;
