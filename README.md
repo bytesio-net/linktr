@@ -57,7 +57,12 @@ You can edit the configuration in the `app/config/index.tsx` file.
   announcements?: string;
   meta: {
     [key: string]: string;
-  };
+  },
+  share?: {
+    label: boolean
+    description?: string
+    url?: string
+  },
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;
