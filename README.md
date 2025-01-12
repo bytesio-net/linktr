@@ -58,6 +58,11 @@ You can edit the configuration in the `app/config/index.tsx` file.
   meta: {
     [key: string]: string;
   },
+  share?: {
+    label: boolean
+    description?: string
+    url?: string
+  },
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;
