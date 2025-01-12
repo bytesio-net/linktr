@@ -51,7 +51,7 @@ You can edit the configuration in the `app/config/index.tsx` file.
   icon: {
     light: string;
     dark?: string;
-  };
+  },
   title: string;
   username?: string;
   announcements?: string;
@@ -71,9 +71,18 @@ You can edit the configuration in the `app/config/index.tsx` file.
     whatsapp?: RouteLink;
     bashop?: RouteLink;
     [key: string]: RouteLink | undefined;
-  };
+  },
+  thirdParty?: {
+    ga4? :{
+      id: string
+    }
+  }
 }
 ```
+
+### TODO
+- [x] GA4
+- [ ] share button
 
 ---
 

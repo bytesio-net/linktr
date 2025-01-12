@@ -72,4 +72,9 @@ export const config = {
       label: "powered by bytesio.net (linktr)",
     },
   },
+  thirdParty: {
+    ga4: {
+      id: "G-G3ZW2G80MV",
+    },
+  },
 } as Config;

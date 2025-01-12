@@ -5,6 +5,8 @@ import {
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+import packageJson from "./package.json";
+
 declare module "@remix-run/cloudflare" {
   interface Future {
     v3_singleFetch: true;
@@ -28,4 +30,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  define: {
+    __APP_VERSION__: JSON.stringify(packageJson.version),
+  },
 });
