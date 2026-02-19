@@ -16,7 +16,7 @@ export const WhatsappLink = ({ label, ...props }: ShopRouteLinkProps) => {
       )}
       {...props}
     >
-      {label ?? "Shop"}
+      {label ?? "Whatsapp"}
     </RouteButton>
   );
 };

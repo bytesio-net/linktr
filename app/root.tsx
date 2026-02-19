@@ -1,13 +1,13 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 
+import ThirdPartyScripts from "./components/ThirdPartyScripts";
 import { config } from "./config";
 import { PreventFlashTheme, ThemeProvider } from "./contexts/Theme";
 import "./tailwind.css";
@@ -56,8 +56,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <div className="max-w-lg mx-auto h-screen px-4">{children}</div>
         <ScrollRestoration />
+        {config.thirdParty && <ThirdPartyScripts config={config.thirdParty} />}
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );

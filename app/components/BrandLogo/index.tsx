@@ -1,5 +1,7 @@
 import { HTMLAttributes } from "react";
 
+import { cn } from "../../lib/utils";
+
 interface ImageProps extends HTMLAttributes<HTMLImageElement> {
   src: {
     light: string;
@@ -15,7 +17,10 @@ export const BrandLogo = ({ ...props }: ImageProps) => {
         <img
           src={props.src.light}
           alt={props.alt}
-          className="object-cover rounded dark:hidden"
+          className={cn(
+            "object-cover rounded",
+            props.src.dark && "dark:hidden"
+          )}
         />
       )}
       {props.src.dark && (

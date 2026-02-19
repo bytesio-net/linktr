@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/bytesio-net/linktr/compare/v1.2.0...v1.3.0) (2025-01-12)
+
+
+### Features
+
+* ga4 ([#4](https://github.com/bytesio-net/linktr/issues/4)) ([57c6200](https://github.com/bytesio-net/linktr/commit/57c62007e46b73a66d55082e50028d6a21b7e395))
+* share ([#5](https://github.com/bytesio-net/linktr/issues/5)) ([59b6de0](https://github.com/bytesio-net/linktr/commit/59b6de09d7f2eab8233c18c5d2ab423256ce5110))
+
+## [1.2.0](https://github.com/bytesio-net/linktr/compare/v1.0.0...v1.2.0) (2024-12-14)
+
+
+### Features
+
+* opensource-setup ([#2](https://github.com/bytesio-net/linktr/issues/2)) ([a4e1564](https://github.com/bytesio-net/linktr/commit/a4e1564622b366196b3e2de9dbd86dca5727fa64))
+* route disabled property ([91ac53a](https://github.com/bytesio-net/linktr/commit/91ac53a494087204a642d6b78714f7ffecbd34f5))
+* show linktr header ([e282afa](https://github.com/bytesio-net/linktr/commit/e282afaed330a273982496a3a636ccf10bb6edfe))
+* whatsapp link ([8ce8616](https://github.com/bytesio-net/linktr/commit/8ce8616a63928f588cb944313a532871840d85d4))
+
+
+### Bug Fixes
+
+* default link color ([ba08df0](https://github.com/bytesio-net/linktr/commit/ba08df01d39623412bddfb57a8d42d3747065436))
+* facebook link hover color ([689e9a7](https://github.com/bytesio-net/linktr/commit/689e9a7828e72fab9fef26083d115412d27f8e05))
+* logo icon size ([03c2b0c](https://github.com/bytesio-net/linktr/commit/03c2b0c171efe8374b9b01f515df141bbd2eaaa2))
+* no dark icon ([b44f325](https://github.com/bytesio-net/linktr/commit/b44f32559cac632c0d678f80a47758421fad9f82))
+* route button font size ([e021fc6](https://github.com/bytesio-net/linktr/commit/e021fc634f6ed9ac56106fd872738a6cea07a580))
+* routebutton padding ([b941b51](https://github.com/bytesio-net/linktr/commit/b941b51c4febc30e9b98a6ae15051ba7c07385c0))
+* routelink disable hover effect ([a0766dc](https://github.com/bytesio-net/linktr/commit/a0766dc99edd8aa08516dadfa707ceee4e6e1bdd))
+* theme btn allowed in /linktr ([9d9c536](https://github.com/bytesio-net/linktr/commit/9d9c5365621fef135be2a615aadf02b91fef0554))
+
 ## [1.1.0](https://github.com/bytesio-net/linktr/compare/v1.0.0...v1.1.0) (2024-12-07)
 
 
