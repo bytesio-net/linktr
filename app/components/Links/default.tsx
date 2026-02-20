@@ -5,7 +5,15 @@ import { RouteButton } from "../RouteButton";
 
 type DefaultRouteLinkProps = RouteLinkProps;
 
-export const DefaultLink = ({ label, ...props }: DefaultRouteLinkProps) => {
+export const DefaultLink = ({
+  label,
+  compact,
+  ...props
+}: DefaultRouteLinkProps) => {
+  if (compact) {
+    return null;
+  }
+
   return (
     <RouteButton
       className={cn(

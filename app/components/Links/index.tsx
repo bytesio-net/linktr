@@ -12,10 +12,12 @@ import { XLink } from "./x";
 
 export type RouteLinkProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
+  compact?: boolean;
 };
 
 type LinksProps = {
   routes: LinkTree["routes"];
+  layout?: LinkTree["layout"];
 };
 
 const routeLinkMap = {
@@ -27,8 +29,36 @@ const routeLinkMap = {
   whatsapp: WhatsappLink,
 };
 
-export const Links = ({ routes = {} }: LinksProps) => {
+export const Links = ({ routes = {}, layout }: LinksProps) => {
   const routeKeys = Object.keys(routes);
+  const isCompact = layout?.compact ?? false;
+
+  if (isCompact) {
+    return (
+      <div className="w-full flex flex-wrap gap-3 justify-center">
+        {routeKeys.map((key) => {
+          const RouteLink =
+            routeLinkMap[key as keyof typeof routeLinkMap] ?? DefaultLink;
+          return routes[key]?.route && !routes[key]?.disabled ? (
+            <Link
+              key={key}
+              to={routes[key]?.route ?? ""}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <RouteLink compact {...routes[key as keyof typeof routes]} />
+            </Link>
+          ) : (
+            <RouteLink
+              key={key}
+              compact
+              {...routes[key as keyof typeof routes]}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex flex-col gap-6">

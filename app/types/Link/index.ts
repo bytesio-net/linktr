@@ -17,6 +17,9 @@ export type LinkTree = {
     description?: string;
     url?: string;
   };
+  layout?: {
+    compact?: boolean;
+  };
   routes: {
     X?: RouteLink;
     facebook?: RouteLink;

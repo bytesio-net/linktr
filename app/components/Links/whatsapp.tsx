@@ -3,10 +3,19 @@ import { cn } from "~/lib/utils";
 import { RouteLinkProps } from ".";
 import { WhatsappIcon } from "../Icons/WhatsappIcon";
 import { RouteButton } from "../RouteButton";
+import { CompactRouteButton } from "../RouteButton/compact";
 
-type ShopRouteLinkProps = RouteLinkProps;
+type WhatsappRouteLinkProps = RouteLinkProps;
 
-export const WhatsappLink = ({ label, ...props }: ShopRouteLinkProps) => {
+export const WhatsappLink = ({
+  label,
+  compact,
+  ...props
+}: WhatsappRouteLinkProps) => {
+  if (compact) {
+    return <CompactRouteButton icon={WhatsappIcon} {...props} />;
+  }
+
   return (
     <RouteButton
       icon={WhatsappIcon}

@@ -3,10 +3,15 @@ import { cn } from "~/lib/utils";
 import { RouteLinkProps } from ".";
 import { XIcon } from "../Icons/XIcon";
 import { RouteButton } from "../RouteButton";
+import { CompactRouteButton } from "../RouteButton/compact";
 
 type XLinkProps = RouteLinkProps;
 
-export const XLink = ({ label, ...props }: XLinkProps) => {
+export const XLink = ({ label, compact, ...props }: XLinkProps) => {
+  if (compact) {
+    return <CompactRouteButton icon={XIcon} {...props} />;
+  }
+
   return (
     <RouteButton
       icon={XIcon}
@@ -16,7 +21,7 @@ export const XLink = ({ label, ...props }: XLinkProps) => {
       )}
       {...props}
     >
-      {label ?? "Threads"}
+      {label ?? "X"}
     </RouteButton>
   );
 };

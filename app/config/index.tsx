@@ -39,6 +39,9 @@ export const config = {
   share: {
     label: true,
   },
+  layout: {
+    compact: false,
+  },
   routes: {
     shop: {
       route: "https://instagram.com/select.conceptlab.hk",

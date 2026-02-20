@@ -11,7 +11,7 @@ interface LinkTreeProps {
 }
 
 const LinkTree = ({
-  config: { icon, title, announcements, routes, username, share },
+  config: { icon, title, announcements, routes, username, share, layout },
 }: LinkTreeProps) => {
   return (
     <div
@@ -35,7 +35,7 @@ const LinkTree = ({
       </div>
       <div className="my-4 px-8 w-full flex flex-col gap-4">
         {announcements && <Announcement message={announcements} />}
-        <Links routes={routes} />
+        <Links routes={routes} layout={layout} />
       </div>
     </div>
   );

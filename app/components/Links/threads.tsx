@@ -3,10 +3,15 @@ import { cn } from "~/lib/utils";
 import { RouteLinkProps } from ".";
 import { ThreadsIcon } from "../Icons/ThreadsIcon";
 import { RouteButton } from "../RouteButton";
+import { CompactRouteButton } from "../RouteButton/compact";
 
 type ThreadsLinkProps = RouteLinkProps;
 
-export const ThreadsLink = ({ label, ...props }: ThreadsLinkProps) => {
+export const ThreadsLink = ({ label, compact, ...props }: ThreadsLinkProps) => {
+  if (compact) {
+    return <CompactRouteButton icon={ThreadsIcon} {...props} />;
+  }
+
   return (
     <RouteButton
       icon={ThreadsIcon}
