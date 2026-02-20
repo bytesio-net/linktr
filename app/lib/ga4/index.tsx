@@ -29,14 +29,8 @@ export type GAParams = {
   };
 };
 
-let currDataLayerName: string | undefined = undefined;
-
 export const GoogleAnalytics = (props: GAParams) => {
   const { gaId, dataLayerName = "dataLayer", config } = props;
-
-  if (currDataLayerName === undefined) {
-    currDataLayerName = dataLayerName;
-  }
 
   return (
     <>
