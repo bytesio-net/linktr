@@ -22,7 +22,11 @@ export const ShareButton = ({
 
   const handleClick = async () => {
     const shareUrl = url || window.location.href;
-    const result = await share({ url: shareUrl, title });
+
+    const result = await share({
+      url: shareUrl,
+      title,
+    });
 
     if (result.copied) {
       setIsCopied(true);

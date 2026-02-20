@@ -55,10 +55,9 @@ const useShare = () => {
             }),
           });
           return { shared: true, copied: false };
-        } catch (err) {
-          if (err instanceof Error && err.name === "AbortError") {
-            return { shared: false, copied: false };
-          }
+        } catch {
+          // Always return early on mobile to prevent fallback to clipboard copy
+          return { shared: false, copied: false };
         }
       }
 
