@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/bytesio-net/linktr/compare/v1.3.0...v1.4.0) (2026-02-20)
+
+
+### Features
+
+* compact mode ([ddf42a6](https://github.com/bytesio-net/linktr/commit/ddf42a628b409a3ea05ab0c6438ba33b05f489f3))
+
+
+### Bug Fixes
+
+* meta fn to root.tsx ([21844e3](https://github.com/bytesio-net/linktr/commit/21844e30ecc369150cb11b7abadcc35644834e94))
+* mobile native AbortError ([ded508e](https://github.com/bytesio-net/linktr/commit/ded508e7ebedd7eae7d39980a3def3ab811dae79))
+* TriangleAlertIcon size ([998ee7b](https://github.com/bytesio-net/linktr/commit/998ee7bf36e38f3f90b3f4a3ac1efd81b62faf49))
+
 ## [1.3.0](https://github.com/bytesio-net/linktr/compare/v1.2.0...v1.3.0) (2025-01-12)
 
 
