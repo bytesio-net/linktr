@@ -28,14 +28,16 @@ export const DevicePlatformProvider = ({
   );
 
   useEffect(() => {
-    if (width === undefined) return setDevicePlatform(null);
-    if ((width && width < BREAKPOINT.SM_MIN) || width === 0) {
-      setDevicePlatform(DevicePlatform.MOBILE);
-    } else if (width && width < BREAKPOINT.LG_MIN) {
-      setDevicePlatform(DevicePlatform.TABLET);
-    } else {
-      setDevicePlatform(DevicePlatform.DESKTOP);
-    }
+    const platform = (() => {
+      if (width === undefined) return null;
+      if ((width && width < BREAKPOINT.SM_MIN) || width === 0) {
+        return DevicePlatform.MOBILE;
+      } else if (width && width < BREAKPOINT.LG_MIN) {
+        return DevicePlatform.TABLET;
+      }
+      return DevicePlatform.DESKTOP;
+    })();
+    setDevicePlatform(platform);
   }, [width]);
 
   return (

@@ -3,10 +3,15 @@ import { cn } from "~/lib/utils";
 import { RouteLinkProps } from ".";
 import { ShopIcon } from "../Icons/ShopIcon";
 import { RouteButton } from "../RouteButton";
+import { CompactRouteButton } from "../RouteButton/compact";
 
 type ShopRouteLinkProps = RouteLinkProps;
 
-export const ShopLink = ({ label, ...props }: ShopRouteLinkProps) => {
+export const ShopLink = ({ label, compact, ...props }: ShopRouteLinkProps) => {
+  if (compact) {
+    return <CompactRouteButton icon={ShopIcon} {...props} />;
+  }
+
   return (
     <RouteButton
       icon={ShopIcon}
